@@ -21,9 +21,22 @@ repositories {
 	mavenCentral()
 }
 
+ext{
+    lombokVersion = '1.16.12'
+    mysqlVersion = '6.0.5'
+    slf4jVersion = '1.7.22'
+    swaggerVersion = '2.6.1'
+}
 
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
+
+	compile group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+	compile group: 'mysql', name: 'mysql-connector-java', version: mysqlVersion
+	compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: swaggerVersion
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: swaggerVersion
+
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
