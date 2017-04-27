@@ -46,14 +46,12 @@ public class PesquisaProdutosStepDefs {
 
 	private void consultaPorId(){
 		RestTemplate restTemplate = new RestTemplate();
-
 		try {
 			this.result = restTemplate.getForObject(this.url + id, String.class);
 		}
 		catch(Exception e){
 			this.exception = e;
 		}
-
 	}
 
 	@Então("^a consulta deve retornar uma exceção$")
